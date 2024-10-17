@@ -5,7 +5,9 @@ function App() {
     <div className="App">
       <div className="main">
         <div className="container">
-          <Cart />
+          <div className="content">
+            <Cart />
+          </div>
         </div>
       </div>
     </div>

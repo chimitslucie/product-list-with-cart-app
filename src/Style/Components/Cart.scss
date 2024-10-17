@@ -1,0 +1,17 @@
+.cart {
+    &Title {
+        color: $rose900;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 120%;
+        margin-bottom: 32px;
+    }
+
+    &Content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 24px;
+        grid-row-gap: 32px;
+    }
+}
