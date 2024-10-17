@@ -3,63 +3,63 @@
     "id": 1,
     "image": "../Assets/Product/waffle.jpg",
     "type": "waffle",
-    "product": "Waffle with Berries",
+    "food": "Waffle with Berries",
     "price": "$6.50"
   },
   {
     "id": 2,
     "image": "../Assets/Product/creme-brulee.jpg",
     "type": "crème brulée",
-    "product": "Vanilla Bean Crème Brulée",
+    "food": "Vanilla Bean Crème Brulée",
     "price": "$7.00"
   },
   {
     "id": 3,
     "image": "../Assets/Product/macaron.jpg",
     "type": "macaron",
-    "product": "Macaron Mix of Five",
+    "food": "Macaron Mix of Five",
     "price": "$8.00"
   },
   {
     "id": 4,
     "image": "../Assets/Product/tiramisu.jpg",
     "type": "tiramisu",
-    "product": "Classic Tiramisu",
+    "food": "Classic Tiramisu",
     "price": "$5.50"
   },
   {
     "id": 5,
     "image": "../Assets/Product/baklava.jpg",
     "type": "baklava",
-    "product": "Pistachio Baklava",
+    "food": "Pistachio Baklava",
     "price": "$4.00"
   },
   {
     "id": 6,
     "image": "../Assets/Product/meringue.jpg",
     "type": "pie",
-    "product": "Lemon Meringue Pie",
+    "food": "Lemon Meringue Pie",
     "price": "$5.00"
   },
   {
     "id": 7,
     "image": "../Assets/Product/cake.jpg",
     "type": "cake",
-    "product": "Red Velvet Cake",
+    "food": "Red Velvet Cake",
     "price": "$4.50"
   },
   {
     "id": 8,
     "image": "../Assets/Product/brownie.jpg",
     "type": "brownie",
-    "product": "Salted Caramel Brownie",
+    "food": "Salted Caramel Brownie",
     "price": "$5.50"
   },
   {
     "id": 9,
     "image": "../Assets/Product/panna-cotta.jpg",
     "type": "panna cotta",
-    "product": "Vanilla Panna Cotta",
+    "food": "Vanilla Panna Cotta",
     "price": "$6.50"
   }
 ]
