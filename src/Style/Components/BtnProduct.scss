@@ -6,7 +6,12 @@
     border: 1px solid $rose400;
     border-radius: 30px;
     padding: 12px 28px;
-
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $white;
+ 
     &Img {
         width: 20px;
     }
