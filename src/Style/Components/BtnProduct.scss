@@ -1,0 +1,20 @@
+.btnProduct {
+    display: flex;
+    align-items: center;
+    max-width: 160px;
+    width: 100%;
+    border: 1px solid $rose400;
+    border-radius: 30px;
+    padding: 12px 28px;
+
+    &Img {
+        width: 20px;
+    }
+
+    &Text {
+        color: $rose900;
+        font-size: 14px;
+        font-weight: 600;
+        margin-left: 6px;
+    }
+}
