@@ -6,6 +6,23 @@
     padding: 24px 24px;
     height: 100%;
 
+    @media (max-width: 1250px) {
+        max-width: 350px;
+    }
+
+    @media (max-width: 1080px) {
+        max-width: 300px;
+    }
+
+    @media (max-width: 1030px) {
+        max-width: 270px;
+    }
+
+    @media (max-width: 1020px) {
+        margin-top: 32px;
+        max-width: 100%;
+    }
+
     &Title {
         color: $red;
         font-size: 24px;
@@ -15,6 +32,10 @@
     &Empty {
         text-align: center;
         margin: 88px 0 16px 0;
+
+        @media (max-width: 1020px) {
+            margin-top: 40px;
+        }
 
         &Img {
             max-width: 128px;

@@ -3,10 +3,27 @@
     max-width: 250px;
     width: 100%;
 
+    @media (max-width: 1250px) {
+        max-width: 213px;
+    }
+
+    @media (max-width: 470px) {
+        max-width: 100%;
+    }
+
+
     &Img {
         max-width: 250px;
         width: 100%;
         border-radius: 8px;
+
+
+        @media (max-width: 470px) {
+            max-width: 100%;
+            max-height: 212px;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
     &Content {
