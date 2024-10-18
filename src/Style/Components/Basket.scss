@@ -1,0 +1,30 @@
+.basket {
+    max-width: 384px;
+    width: 100%;
+    background-color: $white;
+    border-radius: 12px;
+    padding: 24px 24px;
+
+    &Title {
+        color: $red;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    &Empty {
+        text-align: center;
+        margin-top: 88px;
+
+        &Img {
+            max-width: 128px;
+            width: 100%;
+        }
+
+        &Text {
+            color: $rose500;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+    }
+}

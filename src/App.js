@@ -1,4 +1,5 @@
 import Cart from "./Components/Cart";
+import Basket from "./Components/Basket";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
         <div className="container">
           <div className="content">
             <Cart />
+            <Basket />
           </div>
         </div>
       </div>
