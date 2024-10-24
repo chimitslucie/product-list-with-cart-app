@@ -2,6 +2,7 @@
   {
     "id": 1,
     "image": "/Product/waffle.jpg",
+    "alt": "waffle-image",
     "type": "waffle",
     "food": "Waffle with Berries",
     "price": "$6.50"
@@ -9,6 +10,7 @@
   {
     "id": 2,
     "image": "/Product/creme-brulee.jpg",
+    "alt": "crème-brulée-image",
     "type": "crème brulée",
     "food": "Vanilla Bean Crème Brulée",
     "price": "$7.00"
@@ -16,6 +18,7 @@
   {
     "id": 3,
     "image": "/Product/macaron.jpg",
+    "alt": "macaron-image",
     "type": "macaron",
     "food": "Macaron Mix of Five",
     "price": "$8.00"
@@ -23,6 +26,7 @@
   {
     "id": 4,
     "image": "/Product/tiramisu.jpg",
+    "alt": "tiramisu-image",
     "type": "tiramisu",
     "food": "Classic Tiramisu",
     "price": "$5.50"
@@ -30,6 +34,7 @@
   {
     "id": 5,
     "image": "/Product/baklava.jpg",
+    "alt": "baklava-pistachio-image",
     "type": "baklava",
     "food": "Pistachio Baklava",
     "price": "$4.00"
@@ -37,6 +42,7 @@
   {
     "id": 6,
     "image": "/Product/meringue.jpg",
+    "alt": "lemon-meringue(pie-image",
     "type": "pie",
     "food": "Lemon Meringue Pie",
     "price": "$5.00"
@@ -44,6 +50,7 @@
   {
     "id": 7,
     "image": "/Product/cake.jpg",
+    "alt": "red-velvet-cake-image",
     "type": "cake",
     "food": "Red Velvet Cake",
     "price": "$4.50"
@@ -51,6 +58,7 @@
   {
     "id": 8,
     "image": "/Product/brownie.jpg",
+    "alt": "brownie-image",
     "type": "brownie",
     "food": "Salted Caramel Brownie",
     "price": "$5.50"
@@ -58,6 +66,7 @@
   {
     "id": 9,
     "image": "/Product/panna-cotta.jpg",
+    "alt": "panna-cotta-image",
     "type": "panna cotta",
     "food": "Vanilla Panna Cotta",
     "price": "$6.50"

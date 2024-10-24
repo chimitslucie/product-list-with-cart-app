@@ -1,11 +1,10 @@
-
 import BtnProduct from './BtnProduct';
 
 function Product({ data }) {
     return (
-        <div className="productCard">
-            <img src={data.image} className="productCardImg" />
-            <BtnProduct />
+        <div className="productCard" id={data.id}>
+            <img src={data.image} alt={data.alt} className="productCardImg" />
+            <BtnProduct id={data.id} />
             <div className="productCardContent">
                 <p className="productCardContentType">
                     {data.type}

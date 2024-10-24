@@ -1,30 +1,89 @@
 .btnProduct {
-    display: flex;
-    align-items: center;
-    max-width: 160px;
-    width: 100%;
-    border: 1px solid $rose400;
-    border-radius: 30px;
-    padding: 12px 28px;
     position: absolute;
     top: 62%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: $white;
+    max-width: 160px;
+    width: 100%;
 
     @media (max-width: 1250px) {
         top: 58%;
     }
 
-    &Img {
-        width: 20px;
+    &Empty {
+        display: flex;
+        align-items: center;
+        border: 1px solid $rose400;
+        background-color: $white;
+        color: $rose900;
+        padding: 12px 28px;
+        border-radius: 30px;
+
+        &.click {
+            display: none;
+        }
+
+        &.empty {
+            display: flex;
+        }
+
+        &:hover {
+            border: 1px solid $red;
+            color: $red;
+        }
+
+
+        &Img {
+            width: 20px;
+        }
+
+        &Text {
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 6px;
+            font-family: "Red Hat Text", sans-serif;
+        }
     }
 
-    &Text {
-        color: $rose900;
-        font-size: 14px;
-        font-weight: 600;
-        margin-left: 6px;
-        font-family: "Red Hat Text", sans-serif;
+    &Full {
+        background-color: $red;
+        border-radius: 30px;
+        padding: 12px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &.null {
+            display: none;
+        }
+
+        &Count {
+            border: 1px solid #FFFFFF;
+            border-radius: 10px;
+            width: 18px;
+            height: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                background-color: $white;
+            }
+
+            &Icon {
+                color: $white;
+                font-size: 12px;
+
+                &:hover {
+                    color: $red;
+                }
+            }
+        }
     }
+}
+
+.count {
+    font-size: 14px;
+    font-weight: 600;
+    color: $white;
 }
