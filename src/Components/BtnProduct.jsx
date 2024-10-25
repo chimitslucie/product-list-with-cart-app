@@ -39,7 +39,7 @@ function BtnProduct({ id }) {
                 <img src={iconAddCart} className="btnProductEmptyImg" />
                 <p className="btnProductEmptyText"> Add to Cart</p>
             </button>
-            {isClick && <div className={`${counter >= 1 ? "btnProductFull" : "btnProductFull null"}`}>
+            {isClick && <div className={`${counter >= 1 ? "btnProductFull" : "btnProductFull nothing"}`}>
                 <button className="btnProductFullDecrement btnProductFullCount" onClick={handleDecrement}>
                     <FontAwesomeIcon icon={faMinus} className="btnProductFullDecrementIcon btnProductFullCountIcon" />
                 </button>

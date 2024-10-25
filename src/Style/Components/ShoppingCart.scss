@@ -1,0 +1,173 @@
+.shoppingCart {
+    max-width: 384px;
+    width: 100%;
+    background-color: $white;
+    border-radius: 12px;
+    padding: 24px 24px;
+    height: 100%;
+
+    @media (max-width: 1250px) {
+        max-width: 350px;
+    }
+
+    @media (max-width: 1080px) {
+        max-width: 300px;
+    }
+
+    @media (max-width: 1030px) {
+        max-width: 270px;
+    }
+
+    @media (max-width: 1020px) {
+        margin-top: 32px;
+        max-width: 100%;
+    }
+
+    &Title {
+        color: $red;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    &Empty {
+        text-align: center;
+        margin: 88px 0 16px 0;
+
+        @media (max-width: 1020px) {
+            margin-top: 40px;
+        }
+
+        &Img {
+            max-width: 128px;
+            width: 100%;
+        }
+
+        &Text {
+            color: $rose500;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+    }
+
+    &Full {
+        &Item {
+            margin-top: 24px;
+
+            &Content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &Border {
+                border: 1px solid $rose100;
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+        }
+
+        &Content {
+            &Food {
+                font-size: 14px;
+                font-weight: 600;
+                color: $rose900;
+                text-transform: capitalize;
+            }
+
+            &Prices {
+                display: flex;
+                align-items: center;
+                margin-top: 8px;
+            }
+
+            &Quantity {
+                color: $red;
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            &Price {
+                color: $rose500;
+                font-size: 14px;
+                font-weight: 400;
+                margin: 0 8px;
+            }
+
+            &TotalPrice {
+                color: $rose500;
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+
+        &Icon {
+            font-size: 18px;
+            color: $rose400;
+
+            &:hover {
+                color: $rose900;
+                cursor: pointer;
+            }
+        }
+
+        &Total {
+            &Content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &Text {
+                color: $rose900;
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            &Price {
+                color: $rose900;
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+            &Carbon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $rose50;
+                border-radius: 12px;
+                padding: 16px 0;
+                margin: 24px 0;
+
+                &Img {
+                    width: 20px;
+                    margin-right: 8px;
+                }
+
+                &Text {
+                    color: $rose900;
+                    font-size: 14px;
+                    font-weight: 400;
+
+                    &Span {
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            &Btn {
+                color: $white;
+                font-size: 16px;
+                font-weight: 600;
+                background-color: $red;
+                width: 100%;
+                border-radius: 30px;
+                padding: 16px 0;
+
+                &:hover {
+                    filter: grayscale(25%);
+                }
+            }
+        }
+    }
+}

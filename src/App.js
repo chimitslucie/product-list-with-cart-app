@@ -1,5 +1,5 @@
 import Cart from "./Components/Cart";
-import Basket from "./Components/Basket";
+import ShoppingCart from "./Components/ShoppingCart";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
         <div className="container">
           <div className="content">
             <Cart />
-            <Basket />
+            <ShoppingCart />
           </div>
         </div>
       </div>
