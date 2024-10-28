@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import shoppingCartImg from '../Assets/Img/ShoppingCart/illustration-empty-cart.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import carbonIcon from "../Assets/Img/Icons/icon-carbon-neutral.svg";
+import { ShopContext } from '../Context/ShopContext';
+import products from '../Data/Product.json';
 
 
-function ShoppingCart() {
+function ShoppingCart({ }) {
+    const { cartItems } = useContext(ShopContext);
 
     return (
         <div className="shoppingCart">
@@ -19,31 +22,36 @@ function ShoppingCart() {
                 </p>
             </div> */}
             <div className="shoppingCartFull">
-                <div className='shoppingCartFullItem'>
-                    <div className='shoppingCartFullItemContent'>
-                        <div className='shoppingCartFullContent'>
-                            <h2 className='shoppingCartFullContentFood'>
-                                {/* {data.id.food} */}
-                                waffle
-                            </h2>
-                            <div className='shoppingCartFullContentPrices'>
-                                <p className='shoppingCartFullContentQuantity'>
-                                    {/* {id.counter} */} 1x
-                                </p>
-                                <p className='shoppingCartFullContentPrice'>
-                                    @ 44
-                                    {/* {data.id.price} */}
-                                </p>
-                                <p className='shoppingCartFullContentTotalPrice'>
-                                    $85
-                                    {/* {data.id.price * id.counter} */}
-                                </p>
+                {products.map((product) => {
+                    if (cartItems[product.id] !== 0) {
+                        return (
+                            <div className='shoppingCartFullItem'>
+                                <div className='shoppingCartFullItemContent'>
+                                    <div className='shoppingCartFullContent'>
+                                        <h2 className='shoppingCartFullContentFood'>
+                                            {product.food}
+                                        </h2>
+                                        <div className='shoppingCartFullContentPrices'>
+                                            <p className='shoppingCartFullContentQuantity'>
+                                                {product.counter}x
+                                            </p>
+                                            <p className='shoppingCartFullContentPrice'>
+                                                @{product.price}
+                                            </p>
+                                            <p className='shoppingCartFullContentTotalPrice'>
+                                                $
+                                                {/* {data.id.price * id.counter} */}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <FontAwesomeIcon icon={faCircleXmark} className="shoppingCartFullIcon" />
+                                </div>
+                                <hr className='shoppingCartFullItemBorder' />
                             </div>
-                        </div>
-                        <FontAwesomeIcon icon={faCircleXmark} className="shoppingCartFullIcon" />
-                    </div>
-                    <hr className='shoppingCartFullItemBorder' />
-                </div>
+                        )
+                    }
+                })}
+
                 <div className='shoppingCartFullTotal'>
                     <div className='shoppingCartFullTotalContent'>
                         <p className='shoppingCartFullTotalText'>
