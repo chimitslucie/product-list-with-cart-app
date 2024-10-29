@@ -1,19 +1,41 @@
-import BtnProduct from './BtnProduct';
+import { useContext } from 'react';
+import iconAddCart from "../Assets/Img/Icons/icon-add-to-cart.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { ShopContext } from '../Context/ShopContext';
 
-function Product({ data }) {
+function Product({ id, image, alt, type, food, price }) {
+
+    const { cartItems, addToCart, handleDecrement } = useContext(ShopContext);
+
     return (
-        <div className="productCard" id={data.id}>
-            <img src={data.image} alt={data.alt} className="productCardImg" />
-            <BtnProduct id={data.id} />
+        <div className="productCard" id={id}>
+            <img src={image} alt={alt} className="productCardImg" />
+            {!cartItems[id]
+                ? <button className='btnProduct btnProductEmpty' onClick={() => addToCart(id)}>
+                    <img src={iconAddCart} alt='icon-addCart' className="btnProductEmptyImg" />
+                    <p className="btnProductEmptyText"> Add to Cart</p>
+                </button>
+                : <div className="btnProduct btnProductFull">
+                    <button className="btnProductFullDecrement btnProductFullCount" onClick={() => handleDecrement(id)}>
+                        <FontAwesomeIcon icon={faMinus} className="btnProductFullDecrementIcon btnProductFullCountIcon" />
+                    </button>
+                    <p className="count">{cartItems[id]}</p>
+                    <button className="btnProductFullIncrement btnProductFullCount" onClick={() => addToCart(id)}>
+                        <FontAwesomeIcon icon={faPlus} className="btnProductFullIncrementIcon btnProductFullCountIcon" />
+                    </button>
+                </div>
+            }
             <div className="productCardContent">
                 <p className="productCardContentType">
-                    {data.type}
+                    {type}
                 </p>
                 <p className="productCardContentFood">
-                    {data.food}
+                    {food}
                 </p>
                 <p className='productCardContentPrice'>
-                    {data.price}
+                    ${price}
                 </p>
             </div>
         </div>
