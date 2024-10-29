@@ -1,19 +1,18 @@
-import { useContext } from 'react';
-import shoppingCartImg from '../Assets/Img/ShoppingCart/illustration-empty-cart.svg';
+import { useContext, useState } from 'react';
+// import shoppingCartImg from '../Assets/Img/ShoppingCart/illustration-empty-cart.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import carbonIcon from "../Assets/Img/Icons/icon-carbon-neutral.svg";
 import { ShopContext } from '../Context/ShopContext';
-import products from '../Data/Product.json';
 
 
-function ShoppingCart({ }) {
-    const { cartItems } = useContext(ShopContext);
+function ShoppingCart() {
+    const { cartItems, products, removeFromCart, getTotalCartAmount, getTotalCartSize } = useContext(ShopContext);
 
     return (
         <div className="shoppingCart">
             <h2 className="shoppingCartTitle">
-                Your Cart (0)
+                Your Cart ({getTotalCartSize()})
             </h2>
             {/* <div className="shoppingCartEmpty">
                 <img src={shoppingCartImg} className="shoppingCartEmptyImg" alt="" />
@@ -22,10 +21,10 @@ function ShoppingCart({ }) {
                 </p>
             </div> */}
             <div className="shoppingCartFull">
-                {products.map((product) => {
-                    if (cartItems[product.id] !== 0) {
+                {products.map((product, index) => {
+                    if (cartItems[product.id] > 0) {
                         return (
-                            <div className='shoppingCartFullItem'>
+                            <div key={index} className='shoppingCartFullItem'>
                                 <div className='shoppingCartFullItemContent'>
                                     <div className='shoppingCartFullContent'>
                                         <h2 className='shoppingCartFullContentFood'>
@@ -33,33 +32,31 @@ function ShoppingCart({ }) {
                                         </h2>
                                         <div className='shoppingCartFullContentPrices'>
                                             <p className='shoppingCartFullContentQuantity'>
-                                                {product.counter}x
+                                                {cartItems[product.id]}x
                                             </p>
                                             <p className='shoppingCartFullContentPrice'>
-                                                @{product.price}
+                                                @ ${product.price}
                                             </p>
                                             <p className='shoppingCartFullContentTotalPrice'>
-                                                $
-                                                {/* {data.id.price * id.counter} */}
+                                                ${product.price * cartItems[product.id]}
                                             </p>
                                         </div>
                                     </div>
-                                    <FontAwesomeIcon icon={faCircleXmark} className="shoppingCartFullIcon" />
+                                    <FontAwesomeIcon icon={faCircleXmark} className="shoppingCartFullIcon" onClick={() => removeFromCart(product.id)} />
                                 </div>
                                 <hr className='shoppingCartFullItemBorder' />
                             </div>
+
                         )
                     }
                 })}
-
                 <div className='shoppingCartFullTotal'>
                     <div className='shoppingCartFullTotalContent'>
                         <p className='shoppingCartFullTotalText'>
                             Order Total
                         </p>
                         <p className='shoppingCartFullTotalPrice'>
-                            $665
-                            {/*  */}
+                            ${getTotalCartAmount()}
                         </p>
                     </div>
                     <div className='shoppingCartFullTotalCarbon'>
@@ -73,6 +70,7 @@ function ShoppingCart({ }) {
                     </button>
                 </div>
             </div>
+
         </div>
     )
 }

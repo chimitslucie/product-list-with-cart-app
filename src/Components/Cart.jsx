@@ -1,7 +1,11 @@
-import products from '../Data/Product.json';
-import Product from "./Product"
+import { useContext } from "react";
+import { ShopContext } from '../Context/ShopContext';
+import Product from "./Product";
 
 function Cart() {
+
+    const { products } = useContext(ShopContext);
+
     return (
         <div className="cart">
             <h1 className="cartTitle">
@@ -9,7 +13,8 @@ function Cart() {
             </h1>
             <div className="cartContent">
                 {products.map((product, index) => {
-                    return <Product data={product} key={index} />;
+                    return <Product key={index} id={product.id} image={product.image} alt={product.alt} type={product.type} food={product.food}
+                        price={product.price} />;
                 })}
             </div>
         </div>

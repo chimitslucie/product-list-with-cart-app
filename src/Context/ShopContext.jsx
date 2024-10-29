@@ -1,29 +1,68 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import products from '../Data/Product.json';
 
 export const ShopContext = createContext(null);
 
-const getDefaultCart = () => {
-    let cart = {};
-    for (let i = 1; i < products.length + 1; i++) {
-        cart[i] = 0;
-    }
-    return cart;
-}
 
 export const ShopContextProvider = (props) => {
-    const [cartItems, setCartItems] = useState(getDefaultCart());
+    const [cartItems, setCartItems] = useState({});
 
     const addToCart = (itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-    }; 
+        if (!cartItems[itemId]) {
+            setCartItems((prev) => ({ ...prev, [itemId]: 1 }))
+        } else {
+            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
+        }
+    };
+
+    const handleDecrement = (itemId) => {
+        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
+    };
+
+    const removeFromCart = (itemId) => {
+        setCartItems((prev) => ({ ...prev, [itemId]: 0 }))
+    }
+
+    const getTotalCartAmount = () => {
+        let totalAmout = 0;
+
+        for (const productId in cartItems) {
+            let productQuantity = cartItems[productId];
+
+            if (productQuantity > 0) {
+                let productInfo = products.find((product) => product.id == productId);
+                totalAmout += productQuantity * productInfo.price;
+            }
+        }
+        return totalAmout;
+    }
+
+    const getTotalCartSize = () => {
+        let totalSize = 0;
+
+        for (const productId in cartItems) {
+            let productQuantity = cartItems[productId];
+            if (productQuantity > 0) {
+                totalSize += productQuantity;
+            }
+        }
+        return totalSize;
+    }
 
     const contextValue = {
+        products,
         cartItems,
-        addToCart
+        setCartItems,
+        addToCart,
+        handleDecrement,
+        removeFromCart,
+        getTotalCartAmount,
+        getTotalCartSize
     };
 
     return (
-        <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
+        <ShopContext.Provider value={contextValue}>
+            {props.children}
+        </ShopContext.Provider>
     )
 }
