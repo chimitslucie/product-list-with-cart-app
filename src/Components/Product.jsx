@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useState, useEffect, useContext } from "react";
 import iconAddCart from "../Assets/Img/Icons/icon-add-to-cart.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
@@ -8,6 +8,14 @@ import { ShopContext } from '../Context/ShopContext';
 function Product({ id, image, alt, type, food, price }) {
 
     const { cartItems, addToCart, handleDecrement } = useContext(ShopContext);
+
+    useEffect(() => {
+        if (cartItems[id] > 0) {
+            document.getElementById(`${id}`).querySelector('.productCardImg').classList.add("bordered");
+        } else {
+            document.getElementById(`${id}`).querySelector('.productCardImg').classList.remove("bordered");
+        }
+    }, [cartItems[id]]);
 
     return (
         <div className="productCard" id={id}>

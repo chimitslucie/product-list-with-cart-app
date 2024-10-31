@@ -49,6 +49,17 @@ export const ShopContextProvider = (props) => {
         return totalSize;
     }
 
+    const [openModal, setOpenModal] = useState(false);
+
+    const handleOpenModal = () => {
+        setOpenModal(!openModal);
+    }
+
+    const cleanCart = (itemId) => {
+        setCartItems(itemId == 0)
+        setOpenModal(false);
+    }
+
     const contextValue = {
         products,
         cartItems,
@@ -57,7 +68,10 @@ export const ShopContextProvider = (props) => {
         handleDecrement,
         removeFromCart,
         getTotalCartAmount,
-        getTotalCartSize
+        getTotalCartSize,
+        handleOpenModal,
+        openModal,
+        cleanCart
     };
 
     return (

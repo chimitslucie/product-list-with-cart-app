@@ -1,0 +1,160 @@
+.blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 50%);
+}
+
+.shoppingCartModal {
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $white;
+    border-radius: 12px;
+    padding: 40px 40px;
+    width: 592px;
+
+    @media (max-width: 1012px) {
+        top: 10%;
+    }
+
+    @media (max-width: 670px) {
+        top: 8%;
+    }
+
+    @media (max-width: 670px) {
+        top: 8%;
+    }
+
+    @media (max-width: 605px) {
+        width: 500px;
+    }
+
+    @media (max-width: 515px) {
+        width: 450px;
+    }
+
+    @media (max-width: 470px) {
+        width: 100%;
+        top: 3%;
+    }
+
+    &Icon {
+        font-size: 42px;
+        color: $green;
+    }
+
+    &Title {
+        color: $rose900;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 120%;
+        margin: 24px 0 8px 0;
+
+        @media (max-width: 515px) {
+            width: 335px;
+        }
+    }
+
+    &Text {
+        color: $rose500;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    &Btn {
+        width: 100%;
+        padding: 16px 0 16px 0;
+        color: $white;
+        background-color: $red;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 30px;
+    }
+}
+
+.modalContent {
+    background-color: $rose50;
+    border-radius: 8px;
+    padding: 24px 24px;
+    margin: 32px 0 32px 0;
+
+    &Item {
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 24px;
+        }
+
+        &Content {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        &Img {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+        }
+
+        &Infos {
+            margin-left: 16px;
+        }
+
+        &Food {
+            color: $rose900;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        &Prices {
+            display: flex;
+            align-items: center;
+        }
+
+        &Quantity {
+            color: $red;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+
+        &Price {
+            color: $rose500;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        &TotalPrice {
+            color: $rose900;
+            font-size: 16px;
+            font-weight: 600;
+            margin-left: auto;
+        }
+    }
+
+    &Total {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &Text {
+            color: $rose900;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        &Price {
+            color: $rose900;
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+}
